@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Osíris - Login</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        background-color: #f6fff2;
+        color: #021926;
+      }
+
+      /* NAVBAR */
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #782e29;
+        padding: 15px 60px;
+      }
+
+      .nav-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .logo {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: #fff url("logo.png") center/cover no-repeat;
+      }
+
+      .nav-text h1 {
+        margin: 0;
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: #e9e4da;
+      }
+
+      .nav-text span {
+        font-size: 1rem;
+        color: #bab9b5;
+      }
+
+      .nav-center,
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .nav-center button {
+        background: none;
+        border: none;
+        color: #dad4c8;
+        font-size: 1.15rem;
+        cursor: pointer;
+        transition: opacity 0.3s;
+        font-weight: 500;
+      }
+
+      .nav-center button:hover {
+        opacity: 0.7;
+      }
+
+      .nav-right button {
+        font-size: 1.1rem;
+        border-radius: 10px;
+        padding: 10px 22px;
+        font-weight: 600;
+        cursor: pointer;
+        border: 1px solid #fff;
+        background: #fff;
+        color: #000;
+        transition: opacity 0.3s;
+      }
+
+      .nav-right button:hover {
+        opacity: 0.85;
+      }
+
+      /* LOGIN / REGISTER SECTION */
+      .login-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 60px;
+      }
+
+      .login-section h1 {
+        color: #021926;
+        font-size: 2.5rem;
+        margin-bottom: 8px;
+      }
+
+      .login-section p {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+      }
+
+      .tab-buttons {
+        display: flex;
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: #dce2d7;
+        width: 440px;
+        margin-bottom: 25px;
+        border: 1px solid #cbd2c6;
+      }
+
+      .tab-buttons button {
+        flex: 1;
+        padding: 14px;
+        border: none;
+        font-size: 1.05rem;
+        cursor: pointer;
+        background: transparent;
+        color: #000;
+        transition: 0.2s ease-in-out;
+      }
+
+      .tab-buttons .active {
+        background-color: #fff;
+      }
+
+      .tab-buttons .inactive:hover {
+        background-color: #e7ece3;
+      }
+
+      .login-box,
+      .register-box,
+      .empreendedor-form,
+      .estudante-form,
+      .docente-form,
+      .coordenador-form {
+        background: #fff;
+        border: 1px solid #d3d3d3;
+        border-radius: 12px;
+        padding: 50px;
+        width: 520px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      .login-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 25px;
+      }
+
+      .login-header img {
+        width: 28px;
+        height: 28px;
+      }
+
+      .login-header h2 {
+        font-size: 1.6rem;
+        margin: 0;
+        color: #021926;
+      }
+
+      .form-group {
+        margin-bottom: 25px;
+        text-align: left;
+      }
+
+      .form-group label {
+        display: block;
+        font-size: 1rem;
+        margin-bottom: 8px;
+        font-weight: 500;
+        color: #021926;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 14px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+        font-family: inherit;
+      }
+
+      textarea {
+        resize: none;
+      }
+
+      .login-button {
+        width: 100%;
+        background-color: #782e29;
+        color: #fff;
+        padding: 14px;
+        font-size: 1.1rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: opacity 0.3s;
+      }
+
+      .login-button:hover {
+        opacity: 0.9;
+      }
+
+      .forgot-password {
+        text-align: center;
+        margin-top: 12px;
+        font-size: 0.95rem;
+      }
+
+      .register-box {
+        display: none;
+      }
+
+      .register-button {
+        width: 100%;
+        padding: 16px;
+        font-size: 1.05rem;
+        font-weight: 500;
+        border: none;
+        border-radius: 8px;
+        color: #fff;
+        cursor: pointer;
+        margin-top: 18px;
+        transition: opacity 0.3s;
+      }
+
+      .register-button:hover {
+        opacity: 0.9;
+      }
+
+      .empreendedor {
+        background-color: #782e29;
+      }
+
+      .estudante {
+        background-color: #546873;
+      }
+
+      .docente {
+        background-color: #021926;
+      }
+      
+      .coordenador {
+        background-color: #9fa39e;
+      }
+
+      /* EMPREENDEDOR FORM */
+      .empreendedor-form {
+        display: none;
+        text-align: left;
+        max-width: 680px;
+      }
+
+      .empreendedor-form .top-icon {
+        text-align: center;
+        margin-bottom: 25px;
+      }
+
+      .empreendedor-form img {
+        width: 70px;
+        height: 70px;
+        background-color: #782e29;
+        border-radius: 50%;
+        padding: 15px;
+      }
+
+      .empreendedor-form h3 {
+        text-align: center;
+        margin: 10px 0 6px;
+        font-size: 1.4rem;
+      }
+
+      .empreendedor-form p {
+        text-align: center;
+        font-size: 1rem;
+        color: #333;
+        margin-bottom: 45px;
+      }
+
+      .form-row {
+        display: flex;
+        gap: 35px;
+        margin-bottom: 30px;
+      }
+
+      .form-row .form-group {
+        flex: 1;
+      }
+
+      .empreendedor-form button {
+        width: 100%;
+        background-color: #782e29;
+        color: #fff;
+        padding: 16px;
+        font-size: 1.1rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: opacity 0.3s;
+      }
+
+      .empreendedor-form button:hover {
+        opacity: 0.9;
+      }
+
+
+
+      /* Docente FORM */
+      .docente-form {
+        display: none;
+        text-align: left;
+        max-width: 680px;
+      }
+
+      .docente-form .top-icon {
+        text-align: center;
+        margin-bottom: 25px;
+      }
+
+      .docente-form img {
+        width: 70px;
+        height: 70px;
+        background-color: #021926;
+        border-radius: 50%;
+        padding: 15px;
+      }
+
+      .docente-form h3 {
+        text-align: center;
+        margin: 10px 0 6px;
+        font-size: 1.4rem;
+      }
+
+      .docente-form p {
+        text-align: center;
+        font-size: 1rem;
+        color: #333;
+        margin-bottom: 45px;
+      }
+
+      .form-row {
+        display: flex;
+        gap: 35px;
+        margin-bottom: 30px;
+      }
+
+      .form-row .form-group {
+        flex: 1;
+      }
+
+      .docente-form button {
+        width: 100%;
+        background-color: #021926;
+        color: #fff;
+        padding: 16px;
+        font-size: 1.1rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: opacity 0.3s;
+      }
+
+      .docente-form button:hover {
+        opacity: 0.9;
+      }
+
+
+
+      /* ESTUDANTE FORM */
+      .estudante-form {
+        display: none;
+        text-align: left;
+        max-width: 680px;
+      }
+
+      .estudante-form .top-icon {
+        text-align: center;
+        margin-bottom: 25px;
+      }
+
+      .estudante-form .top-icon img {
+        width: 70px;
+        height: 70px;
+        background-color: #6b7c85;
+        border-radius: 50%;
+        padding: 15px;
+      }
+
+      .estudante-form h3 {
+        text-align: center;
+        margin: 10px 0 6px;
+        font-size: 1.4rem;
+      }
+
+      .estudante-form p {
+        text-align: center;
+        font-size: 1rem;
+        color: #333;
+        margin-bottom: 45px;
+      }
+
+      .estudante-form textarea {
+        height: 150px;
+      }
+
+      .estudante-form button {
+        width: 100%;
+        background-color: #546873;
+        color: #fff;
+        padding: 16px;
+        font-size: 1.1rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: opacity 0.3s;
+      }
+
+      .estudante-form button:hover {
+        opacity: 0.9;
+      }
+
+      /* COORDENADOR FORM */
+      .coordenador-form {
+        display: none;
+        text-align: left;
+        max-width: 680px;
+      }
+
+      .coordenador-form .top-icon {
+        text-align: center;
+        margin-bottom: 25px;
+      }
+
+      .coordenador-form .top-icon img {
+        width: 70px;
+        height: 70px;
+        background-color: #9fa39e;
+        border-radius: 50%;
+        padding: 15px;
+      }
+
+      .coordenador-form h3 {
+        text-align: center;
+        margin: 10px 0 6px;
+        font-size: 1.4rem;
+      }
+
+      .coordenador-form p {
+        text-align: center;
+        font-size: 1rem;
+        color: #333;
+        margin-bottom: 45px;
+      }
+
+      .coordenador-form textarea {
+        height: 150px;
+      }
+
+      .coordenador-form button {
+        width: 100%;
+        background-color: #9fa39e;
+        color: #fff;
+        padding: 16px;
+        font-size: 1.1rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: opacity 0.3s;
+      }
+
+      .coordenador-form button:hover {
+        opacity: 0.9;
+      }
+
+      /* FOOTER */
+      footer {
+        background-color: #021926;
+        color: #dad4c8;
+        padding: 50px 80px 20px;
+        margin-top: 80px;
+      }
+
+      .footer-columns {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        margin-bottom: 30px;
+      }
+
+      .footer-column h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+      }
+
+      .footer-column h4 {
+        font-size: 1rem;
+        margin-top: -5px;
+        color: #bab9b5;
+      }
+
+      .footer-column p,
+      .footer-column a {
+        line-height: 1.6;
+        font-size: 0.95rem;
+        color: #dad4c8;
+        text-decoration: none;
+      }
+
+      .footer-divider {
+        border-top: 1px solid #dad4c8;
+        margin-bottom: 15px;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 700px) {
+        .form-row {
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .empreendedor-form,
+        .estudante-form {
+          width: 90%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo"></div>
+        <div class="nav-text">
+          <h1>Osíris</h1>
+          <span>Fatec Zona Leste</span>
+        </div>
+      </div>
+
+      <div class="nav-center">
+        <button>Projetos</button>
+        <button>Como Funciona</button>
+        <button>Grupos</button>
+      </div>
+
+      <div class="nav-right">
+        <button class="login">Login</button>
+        <button class="cadastrar">Cadastrar</button>
+      </div>
+    </nav>
+
+    <section class="login-section">
+      <h1>Osíris</h1>
+      <p>Acesse sua conta ou crie uma nova</p>
+
+      <div class="tab-buttons">
+        <button id="tab-login" class="active">Entrar</button>
+        <button id="tab-register" class="inactive">Cadastrar</button>
+      </div>
+
+      <div class="login-box" id="loginBox">
+        <div class="login-header">
+          <img src="arrowin.png" alt="Ícone de login" />
+          <h2>Fazer Login</h2>
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" />
+        </div>
+
+        <div class="form-group">
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" />
+        </div>
+
+        <button class="login-button">Entrar</button>
+        <div class="forgot-password">Esqueceu sua senha?</div>
+      </div>
+
+      <div class="register-box" id="registerBox">
+        <div class="login-header">
+          <img src="PersonPlus.png" alt="Ícone de cadastro" />
+          <h2>Criar Conta</h2>
+        </div>
+
+        <button class="register-button empreendedor" id="btnEmpreendedor">
+          Empreendedor
+        </button>
+        <button class="register-button estudante" id="btnEstudante">
+          Estudante
+        </button>
+        <button class="register-button docente" id="btnDocente">
+          Docente
+        </button>
+        <button class="register-button coordenador" id="btnCoordenador">
+          Coordenador
+        </button>
+      </div>
+
+      <div class="empreendedor-form" id="empreendedorForm">
+        <div class="top-icon">
+          <img src="lamp.png" alt="Ícone de lâmpada" />
+        </div>
+        <h3>Sou Empreendedor</h3>
+        <p>Tenho uma demanda e preciso de uma solução digital</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nomeEmp">Nome Completo</label>
+            <input type="text" id="nomeEmp" />
+          </div>
+
+          <div class="form-group">
+            <label for="emailEmp">E-mail</label>
+            <input type="email" id="emailEmp" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="telefoneEmp">Telefone</label>
+            <input type="text" id="telefoneEmp" />
+          </div>
+
+          <div class="form-group">
+            <label for="empresaEmp">Empresa / Negócio</label>
+            <input type="text" id="empresaEmp" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="senhaEmp">Senha</label>
+          <input type="password" id="senhaEmp" />
+        </div>
+
+        <button>Criar Conta</button>
+      </div>
+
+      <!-- doecnte teste-->
+       <div class="docente-form" id="docenteForm">
+        <div class="top-icon">
+          <img src="prof.png" alt="Ícone de lâmpada" />
+        </div>
+        <h3>Sou Docente</h3>
+        <p>Tenho um grupo de alunos para orientar</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nomeDoc">Nome Completo</label>
+            <input type="text" id="nomeDoc" />
+          </div>
+
+          <div class="form-group">
+            <label for="emailDoc">E-mail</label>
+            <input type="email" id="emailDoc" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="semestreDoc">Semestre Orientado</label>
+            <input type="text" id="semestreDoc" />
+          </div>
+
+          <div class="form-group">
+            <label for="disciplinaDoc">Disciplina</label>
+            <input type="text" id="disciplinaDoc" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="senhaDoc">Senha</label>
+          <input type="password" id="senhaDoc" />
+        </div>
+
+        <button>Criar Conta</button>
+      </div>
+      <!--coordenador-->
+
+      <div class="coordenador-form" id="coordenadorForm">
+        <div class="top-icon">
+          <img src="book.png" alt="Ícone Coordenador" />
+        </div>
+        <h3>Sou Cordenador</h3>
+        <p>Preciso verificar demandas</p>
+
+        <div class="form-group">
+          <label for="nomeCoo">Nome</label>
+          <input type="text" id="nomeCoo" />
+        </div>
+
+        
+          <div class="form-group">
+            <label for="emailCoo">E-mail</label>
+            <input type="email" id="emailCoo" />
+          </div>
+
+          <div class="form-group">
+            <label for="cursoCoo">Curso</label>
+            <input type="text" id="cursoCoo" />
+          </div>
+
+        <div class="form-group">
+          <label for="senhaStud">Senha</label>
+          <input type="password" id="senhaStud" />
+        </div>
+
+        <button class="register-button coordenador">Criar Conta</button>
+      </div>
+
+      <!--estudante-->
+
+      <div class="estudante-form" id="estudanteForm">
+        <div class="top-icon">
+          <img src="hat.png" alt="Ícone Estudante" />
+        </div>
+        <h3>Sou Estudante</h3>
+        <p>Quero participar de projetos reais e ganhar experiência</p>
+
+        <div class="form-group">
+          <label for="nomeRep">Nome do Representante</label>
+          <input type="text" id="nomeRep" />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="emailStud">E-mail</label>
+            <input type="email" id="emailStud" />
+          </div>
+
+          <div class="form-group">
+            <label for="raStud">RA (Registro Acadêmico)</label>
+            <input type="text" id="raStud" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="semestre">Semestre Atual</label>
+          <input type="text" id="semestre" />
+        </div>
+
+        <div class="form-group">
+          <label for="membros">Membros do Grupo</label>
+          <textarea id="membros"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="senhaStud">Senha</label>
+          <input type="password" id="senhaStud" />
+        </div>
+
+        <button class="register-button estudante">Criar Conta</button>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h3>Osíris</h3>
+          <h4>Fatec Zona Leste</h4>
+          <p>
+            Conectando empreendedores com estudantes de tecnologia para criar
+            soluções inovadoras.
+          </p>
+        </div>
+        <div class="footer-column">
+          <h3>Links Rápidos</h3>
+          <a href="#">Projetos</a>
+          <a href="#">Como Funciona</a>
+          <a href="#">Grupos</a>
+        </div>
+        <div class="footer-column">
+          <h3>Contato</h3>
+          <p>contato@osiris.fatec.sp.gov.br</p>
+          <p>📞 (11) 2024-8000</p>
+          <p>📍 Fatec Zona Leste, São Paulo - SP</p>
+        </div>
+      </div>
+
+      <div class="footer-divider"></div>
+      <div class="footer-bottom">
+        © 2025 Osíris - Fatec Zona Leste. Todos os direitos reservados.
+      </div>
+    </footer>
+
+    <script>
+      const tabLogin = document.getElementById("tab-login");
+      const tabRegister = document.getElementById("tab-register");
+      const loginBox = document.getElementById("loginBox");
+      const registerBox = document.getElementById("registerBox");
+      const empreendedorForm = document.getElementById("empreendedorForm");
+      const btnEmpreendedor = document.getElementById("btnEmpreendedor");
+      const btnEstudante = document.getElementById("btnEstudante");
+      const estudanteForm = document.getElementById("estudanteForm");
+      const btnDocente = document.getElementById("btnDocente");
+      const docenteForm = document.getElementById("docenteForm");
+      const btnCoordenador = document.getElementById("btnCoordenador");
+      const coordenadorForm = document.getElementById("coordenadorForm");
+
+      tabLogin.addEventListener("click", () => {
+        tabLogin.classList.add("active");
+        tabRegister.classList.remove("active");
+        loginBox.style.display = "block";
+        registerBox.style.display = "none";
+        empreendedorForm.style.display = "none";
+        estudanteForm.style.display = "none";
+        docenteForm.style.display = "none";
+        coordenadorForm.style.display = "none";
+      });
+
+      tabRegister.addEventListener("click", () => {
+        tabRegister.classList.add("active");
+        tabLogin.classList.remove("active");
+        registerBox.style.display = "block";
+        loginBox.style.display = "none";
+        empreendedorForm.style.display = "none";
+        estudanteForm.style.display = "none";
+        docenteForm.style.display = "none";
+        coordenadorForm.style.display = "none";
+      });
+
+      btnEmpreendedor.addEventListener("click", () => {
+        registerBox.style.display = "none";
+        empreendedorForm.style.display = "block";
+      });
+
+      btnEstudante.addEventListener("click", () => {
+        registerBox.style.display = "none";
+        empreendedorForm.style.display = "none";
+        estudanteForm.style.display = "block";
+      });
+
+      btnDocente.addEventListener("click", () => {
+        registerBox.style.display = "none";
+        empreendedorForm.style.display = "none";
+        estudanteForm.style.display = "none";
+        docenteForm.style.display = "block";
+      });
+
+      btnCoordenador.addEventListener("click", () => {
+        registerBox.style.display = "none";
+        empreendedorForm.style.display = "none";
+        estudanteForm.style.display = "none";
+        docenteForm.style.display = "none";
+        coordenadorForm.style.display = "block";
+      });
+    </script>
+  </body>
+</html>
