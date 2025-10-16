@@ -1,0 +1,70 @@
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #782e29;
+  padding: 15px 60px;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #fff url("../imgs/logo.png") center/cover no-repeat;
+}
+
+.nav-text h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #e9e4da;
+}
+
+.nav-text span {
+  font-size: 1rem;
+  color: #bab9b5;
+}
+
+.nav-center,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-center button {
+  background: none;
+  border: none;
+  color: #dad4c8;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  font-weight: 500;
+}
+
+.nav-center button:hover {
+  opacity: 0.7;
+}
+
+.nav-right button {
+  font-size: 1.1rem;
+  border-radius: 10px;
+  padding: 10px 22px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid #fff;
+  background: #fff;
+  color: #000;
+  transition: opacity 0.3s;
+}
+
+.nav-right button:hover {
+  opacity: 0.85;
+}

@@ -1,0 +1,121 @@
+/* FORMULÁRIOS ESPECÍFICOS */
+.empreendedor-form,
+.estudante-form,
+.docente-form,
+.coordenador-form {
+  /* display: none; */
+  text-align: left;
+  max-width: 680px;
+  background: #fff;
+  border: 1px solid #d3d3d3;
+  border-radius: 12px;
+  padding: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.coordenador-form {
+  min-width: 500px;
+}
+
+/* Seções superiores */
+.top-icon {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.top-icon img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  padding: 15px;
+}
+
+.empreendedor-form img {
+  background-color: #782e29;
+}
+
+.estudante-form img {
+  background-color: #6b7c85;
+}
+
+.docente-form img {
+  background-color: #021926;
+}
+
+.coordenador-form img {
+  background-color: #9fa39e;
+}
+
+/* Títulos */
+.empreendedor-form h3,
+.estudante-form h3,
+.docente-form h3,
+.coordenador-form h3 {
+  text-align: center;
+  margin: 10px 0 6px;
+  font-size: 1.4rem;
+}
+
+.empreendedor-form p,
+.estudante-form p,
+.docente-form p,
+.coordenador-form p {
+  text-align: center;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 45px;
+}
+
+/* Estrutura dos campos */
+.form-row {
+  display: flex;
+  gap: 35px;
+  margin-bottom: 30px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+textarea {
+  resize: none;
+}
+
+/* Botões */
+.empreendedor-form button {
+  background-color: #782e29;
+}
+
+.estudante-form button {
+  background-color: #546873;
+}
+
+.docente-form button {
+  background-color: #021926;
+}
+
+.coordenador-form button {
+  background-color: #9fa39e;
+}
+
+.empreendedor-form button,
+.estudante-form button,
+.docente-form button,
+.coordenador-form button {
+  width: 100%;
+  color: #fff;
+  padding: 16px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: opacity 0.3s;
+}
+
+.empreendedor-form button:hover,
+.estudante-form button:hover,
+.docente-form button:hover,
+.coordenador-form button:hover {
+  opacity: 0.9;
+}

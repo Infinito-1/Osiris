@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Osíris - Login</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../assets/css/Styles/global.css" />
+    <link rel="stylesheet" href="../assets/css/Styles/navbar.css" />
+    <link rel="stylesheet" href="../assets/css/Styles/login.css" />
+    <link rel="stylesheet" href="../assets/css/Styles/forms.css" />
+    <link rel="stylesheet" href="../assets/css/Styles/footer.css" />
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-left">
+        <div class="logo"></div>
+        <div class="nav-text">
+          <h1>Osíris</h1>
+          <span>Fatec Zona Leste</span>
+        </div>
+      </div>
+
+      <div class="nav-center">
+        <button>Projetos</button>
+        <button>Como Funciona</button>
+        <button>Grupos</button>
+      </div>
+
+      <div class="nav-right">
+        <button class="login">Login</button>
+        <button class="cadastrar">Cadastrar</button>
+      </div>
+    </nav>
+
+    <section class="login-section">
+      <h1>Osíris</h1>
+      <p>Acesse sua conta ou crie uma nova</p>
+
+      <div class="tab-buttons">
+        <button id="tab-login" class="active">Entrar</button>
+        <button id="tab-register" class="inactive">Cadastrar</button>
+      </div>
+
+      <div class="login-box" id="loginBox">
+        <div class="login-header">
+          <img src="../../assets/img/login/arrowin.png" alt="Ícone de login" />
+          <h2>Fazer Login</h2>
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" />
+        </div>
+
+        <div class="form-group">
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" />
+        </div>
+
+        <button class="login-button">Entrar</button>
+        <div class="forgot-password">
+          <a href="esqueceusenha.html" id="esqueceu-senha"
+            >Esqueceu sua senha?</a
+          >
+        </div>
+      </div>
+
+      <div class="register-box" id="registerBox">
+        <div class="login-header">
+          <img src="../../assets/img/login/PersonPlus.png" alt="Ícone de cadastro" />
+          <h2>Criar Conta</h2>
+        </div>
+
+        <a href="./forms/empreendedorform.html">
+          <button class="register-button empreendedor" id="btnEmpreendedor">
+            Empreendedor
+          </button>
+        </a>
+        <a href="./forms/estudantesform.html">
+          <button class="register-button estudante" id="btnEstudante">
+            Estudante
+          </button>
+        </a>
+        <a href="./forms/docenteform.html">
+          <button class="register-button docente" id="btnDocente">
+            Docente
+          </button>
+        </a>
+        <a href="./forms/coordenadorform.html">
+          <button class="register-button coordenador" id="btnCoordenador">
+            Coordenador
+          </button>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h3>Osíris</h3>
+          <h4>Fatec Zona Leste</h4>
+          <p>
+            Conectando empreendedores com estudantes de tecnologia para criar
+            soluções inovadoras.
+          </p>
+        </div>
+        <div class="footer-column">
+          <h3>Links Rápidos</h3>
+          <a href="#">Projetos</a>
+          <a href="#">Como Funciona</a>
+          <a href="#">Grupos</a>
+        </div>
+        <div class="footer-column">
+          <h3>Contato</h3>
+          <p>contato@osiris.fatec.sp.gov.br</p>
+          <p>📞 (11) 2024-8000</p>
+          <p>📍 Fatec Zona Leste, São Paulo - SP</p>
+        </div>
+      </div>
+
+      <div class="footer-divider"></div>
+      <div class="footer-bottom">
+        © 2025 Osíris - Fatec Zona Leste. Todos os direitos reservados.
+      </div>
+    </footer>
+
+    <script src="../assets/scripts/script.js"></script>
+  </body>
+</html>

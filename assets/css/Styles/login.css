@@ -1,0 +1,140 @@
+/* LOGIN / REGISTER SECTION */
+.tab-buttons {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #dce2d7;
+  width: 440px;
+  margin-bottom: 25px;
+  border: 1px solid #cbd2c6;
+}
+
+.tab-buttons button {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  font-size: 1.05rem;
+  cursor: pointer;
+  background: transparent;
+  color: #000;
+  transition: 0.2s ease-in-out;
+}
+
+.tab-buttons .active {
+  background-color: #fff;
+}
+
+.tab-buttons .inactive:hover {
+  background-color: #e7ece3;
+}
+
+.login-box,
+.register-box {
+  background: #fff;
+  border: 1px solid #d3d3d3;
+  border-radius: 12px;
+  padding: 50px;
+  width: 520px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.login-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.login-header img {
+  width: 28px;
+  height: 28px;
+}
+
+.login-header h2 {
+  font-size: 1.6rem;
+  margin: 0;
+  color: #021926;
+}
+
+.form-group {
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #021926;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.login-button {
+  width: 100%;
+  background-color: #782e29;
+  color: #fff;
+  padding: 14px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: opacity 0.3s;
+}
+
+.login-button:hover {
+  opacity: 0.9;
+}
+
+.forgot-password {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 0.95rem;
+}
+
+.register-box {
+  display: none;
+}
+
+.register-button {
+  width: 100%;
+  padding: 16px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 18px;
+  transition: opacity 0.3s;
+}
+
+.register-button:hover {
+  opacity: 0.9;
+}
+
+.empreendedor {
+  background-color: #782e29;
+}
+
+.estudante {
+  background-color: #546873;
+}
+
+.docente {
+  background-color: #021926;
+}
+
+.coordenador {
+  background-color: #9fa39e;
+}
