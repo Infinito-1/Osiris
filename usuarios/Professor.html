@@ -2,107 +2,113 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Osíris - Painel Cicrano Leite</title>
+  <title>Dashboard do Professor - Osiris</title>
 </head>
 <body>
-  <!-- Cabeçalho -->
+
+  <!-- Navbar -->
   <header>
-    <h1>Osíris - Painel Cicrano Leite</h1>
+    <h1>Osiris</h1>
     <nav>
-      <ul>
-        <li><a href="#">Projetos</a></li>
-        <li><a href="#">Como Funciona</a></li>
-        <li><a href="#">Grupos</a></li>
-        <li> <a href="#">Editar Informações de Cadastro</a></li>
-      </ul>
+      
     </nav>
-    <div>
-      <button>Login</button>
-      <button>Cadastrar</button>
-    </div>
   </header>
 
-  <!-- Saudação -->
-  <main>
-    <section>
-      <h2>Bem-vindo, Professor Cicrano</h2>
-      <p>Cicrano Osíris! Cadastra Semestralmente os Grupos de Alunos</p>
-    </section>
+  <!-- Botão de envio de lembrete -->
+  <nav>
+    <a href="./ProfessorLembrete.html"><button>Enviar Lembrete</button></a>
+  </nav>
 
-    <!-- Grupos orientados -->
-    <section>
-      <h3>Grupos orientados</h3>
-      <p>Grupos de desenvolvimento de acordo com as especificações solicitadas por Cicrano</p>
+  <!-- Container principal -->
+  <div class="container">
+    <!-- Conteúdo principal -->
+    <main>
+      <h2>Dashboard do Professor</h2>
 
+      <!-- Grupos Orientados -->
       <section>
-        <h4>Grupo S</h4>
-        <p>Integrantes: Ana, João, Pedro</p>
-        <p>Projeto: E-commerce</p>
-        <p>Status: Em desenvolvimento</p>
-        <button>Ver Detalhes</button>
+        <h3>Grupos Orientados</h3>
+
+        <div>
+          <h4>Grupo: Os Fulaninhos</h4>
+          <p><strong>Representante:</strong> Pedro Alves</p>
+          <p><strong>Semestre:</strong> 3º</p>
+          <p><strong>Projeto:</strong> Sistema de Gestão para Padaria</p>
+          <a href=""><button>Ver Detalhes</button></a>
+          <a href=""><button>Agendar Reunião</button></a>
+        </div>
+
+        <div>
+          <h4>Grupo: Os Fulaninhos</h4>
+          <p><strong>Representante:</strong> Pedro Alves</p>
+          <p><strong>Semestre:</strong> 4º</p>
+          <p><strong>Projeto:</strong> Sistema de Gestão para Padaria</p>
+          <a href=""><button>Ver Detalhes</button></a>
+          <a href=""><button>Agendar Reunião</button></a>
+        </div>
       </section>
 
+      <!-- Demandas Pendentes -->
       <section>
-        <h4>Grupo Lua</h4>
-        <p>Integrantes: Maria, José, Lucas</p>
-        <p>Projeto: E-commerce</p>
-        <p>Status: Em desenvolvimento</p>
-        <button>Ver Detalhes</button>
+        <h3>Demandas Pendentes</h3>
+
+        <div>
+          <h4>App Vida Melhor</h4>
+          <p><strong>Data de Entrega:</strong> 19/05/2025</p>
+          <p><strong>Status:</strong> Aguardando Avaliação</p>
+          <a href=""><button>Visualizar Projeto</button></a>
+          <a href="./ProfessorAvaliar.html"><button>Avaliar</button></a>
+        </div>
       </section>
 
-      <!-- Navegação de grupos -->
-      <div>
-        <button>&larr;</button>
-        <button>&rarr;</button>
-      </div>
-    </section>
+      <!-- Projetos Entregues -->
+      <section>
+        <h3>Projetos Entregues</h3>
 
-    <!-- Verificação de projeto integrador -->
-    <section>
-      <h3>Verificação de Projeto Integrador</h3>
-      <p>Grupo S realizou entrega do Site E-commerce</p>
-      <label>
-        <input type="checkbox" name="projetoPlataforma"> ProjetoPlataforma
-      </label>
-      <button>Verificar</button>
+        <div>
+          <h4>Projeto II</h4>
+          <p><strong>Data de Entrega:</strong> 19/05/2025</p>
+          <p><strong>Status:</strong> Avaliado</p>
+          <a href=""><button>Visualizar Projeto</button></a>
+        </div>
 
-      <!-- Navegação de projetos -->
-      <div>
-        <button>&larr;</button>
-        <button>&rarr;</button>
-      </div>
-    </section>
+        <div>
+          <h4>Projeto Final</h4>
+          <p><strong>Data de Entrega:</strong> 20/05/2025</p>
+          <p><strong>Status:</strong> Avaliado</p>
+          <a href=""><button>Visualizar Projeto</button></a>
+        </div>
+      </section>
+    </main>
 
-    <!-- Quadro de lembretes -->
-    <section>
-      <h3>Enviar lembretes para quadro de avisos</h3>
-      <label for="mensagem">Escreva a mensagem que deseja enviar aos alunos:</label>
-      <input type="text" id="mensagem" name="mensagem" placeholder="Digite sua mensagem aqui">
-      <button>Enviar</button>
-    </section>
-  </main>
+    <!-- Barra lateral -->
+    <aside>
+      <h3>Minhas Informações</h3>
+      <p><strong>Nome:</strong> Arthur</p>
+      <p><strong>Email:</strong> arthur7@gmail.com</p>
+      <p><strong>Função:</strong> Professor</p>
+      <p><strong>Área:</strong> Estrutura de Dados</p>
+
+      <h3>Estatísticas Gerais</h3>
+      <a href=""><button>Grupos Orientando: 2</button></a><br>
+      <a href=""><button>Entregas Pendentes: 1</button></a><br>
+      <a href=""><button>Entregas Avaliadas: 1</button></a>
+
+      <h3>Lembretes Enviados</h3>
+      <ul>
+        <li>Grupo Infinito - 1: Entrega do Projeto Final (20/05/2025) - Prazo: 30/01/2025</li>
+        <li>Todos os Grupos: Apresentação do Vestiário (17/05/2025)</li>
+      </ul>
+    </aside>
+  </div>
 
   <!-- Rodapé -->
   <footer>
-    <section>
-      <h4>Osíris - Painel Cicrano Leite</h4>
-      <p>Plataforma de apoio ao desenvolvimento acadêmico.</p>
-    </section>
-
-    <section>
-      <h4>Links Rápidos</h4>
-      <ul>
-        <li><a href="#">Projetos</a></li>
-        <li><a href="#">Como Funciona</a></li>
-        <li><a href="#">Grupos</a></li>
-      </ul>
-    </section>
-
-    <section>
-      <h4>Contatos</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </section>
+    <nav>
+      
+    </nav>
+   
   </footer>
+
 </body>
 </html>

@@ -2,130 +2,89 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Plataforma Osíris">
-  <meta name="author" content="Grupo Infinito-1">
-  <meta name="keywords" content="HTML, Projetos, Coordenação">
-  <title>Osíris</title>
+  <title>Dashboard do Coordenador</title>
 </head>
 <body>
+
+  <!-- Navbar -->
   <header>
-    <h1>Osíris - Painel Cicrano Leite</h1>
+    <h1>Osiris</h1>
     <nav>
-      <ul>
-        <li><a href="#">Projetos</a></li>
-        <li><a href="#">Como Funciona</a></li>
-        <li><a href="#">Grupos</a></li>
-        <li> <a href="#">Editar Informações de Cadastro</a></li>
-      </ul>
+      
     </nav>
-    <div>
-      <button>Login</button>
-      <button>Cadastrar</button>
-    </div>
   </header>
 
-  <main>
-    <section>
-      <h2>Bem-vindo, Coordenador Beltrano</h2>
-    </section>
+  <!-- Botões de Abas -->
+  <nav>
+    <a href="./Coordenador.html"><button>Demandas Pendentes</button></a>
+    <a href="./CoordenadorEmAndamento.html"><button>Em Andamento</button></a>
+    <a href="./CoodernadorConcluidas.html"><button>Concluídos</button></a>
+  </nav>
 
-    <section>
-      <h3>Aprovação de demandas de acordo com o tipo de aplicativo</h3>
-      <label for="grupo1a">Grupo 1A deseja realizar Projeto/Plataforma Mobile de Amigurumi</label>
-      <select id="grupo1a">
-        <option>Amigurumi</option>
-      </select>
-      <button>Aprovar</button>
-      <p>A aprovação é necessária para uso do aplicativo Amigurumi.</p>
-      <!-- Navegação de grupos -->
-      <div>
-        <button>&larr;</button>
-        <button>&rarr;</button>
-      </div>
-    </section>
+  <!-- Container principal -->
+  <div class="container">
+    <!-- Conteúdo Principal -->
+    <main>
+      <h2>Dashboard do Coordenador</h2>
 
-    <section>
-      <h3>Demandas em aberto</h3>
-      <section>
-        <h4>Aplicativo de Cursos</h4>
-        <p>Aplicativo voltado para organização e exibição de cursos.</p>
-        <button>Ver Detalhes</button>
-      </section>
-      <section>
-        <h4>Site de Plantas</h4>
-        <p>Site dedicado à catalogação e visualização de plantas.</p>
-        <button>Ver Detalhes</button>
-      </section>
-      <section>
-        <h4>Site de Plantas</h4>
-        <p>Site dedicado à catalogação e visualização de plantas.</p>
-        <button>Ver Detalhes</button>
-      </section>
-      <!-- Navegação de demandas em aberto -->
-      <div>
-        <button>&larr;</button>
-        <button>&rarr;</button>
-      </div>
-    </section>
+      <!-- Seção: Demandas Pendentes -->
+      <section id="pendentes">
+        <h3>Demandas Pendentes</h3>
 
-    <!-- Historico de projetos -->
-    <section>
-      <h3>Histórico Projetos Entregues</h3>
-      <section>
-        <h4>MVP - Versão 1.0</h4>
-        <p>Entregue em 09/05/2025. Status: <strong>Aprovado</strong>.</p>
-        <button>Ver Detalhes</button>
-      </section>
-      <section>
-        <h4>Plataforma de Receitas - Versão 2.0</h4>
-        <p>Entregue em 15/06/2025. Status: <strong>Aprovado</strong>.</p>
-        <button>Ver Detalhes</button>
-      </section>
-      <!-- Navegação de Historico de projetos -->
-      <div>
-        <button>&larr;</button>
-        <button>&rarr;</button>
-      </div>
-    </section>
+        <div>
+          <h4>App de Gestão de Academia</h4>
+          <p><strong>Descrição:</strong> Aplicativo para controle de treinos e frequência de alunos</p>
+          <p><strong>Empreendedora:</strong> Raquel Queiroz</p>
+          <p><strong>Empresa:</strong> Super Fit</p>
+          <p><strong>Data de envio:</strong> 10/05/2024</p>
+          <a href=""><button>Analisar e Classificar</button></a>
+        </div>
 
-    <section>
-      <h3>Grupos com Pendências</h3>
-      <section>
-        <h4>Grupo 2B</h4>
-        <p>Documentação final não entregue.</p>
-        <button>Ver Detalhes</button>
-      </section>
-      <section>
-        <h4>Grupo 4D</h4>
-        <p>Falta entrega do protótipo funcional.</p>
-        <button>Ver Detalhes</button>
-      </section>
-      <!-- Navegação de grupos -->
-      <div>
-        <button>&larr;</button>
-        <button>&rarr;</button>
-      </div>
-    </section>
+        <div>
+          <h4>App de Gestão de Academia</h4>
+          <p><strong>Descrição:</strong> Aplicativo para controle de treinos e frequência de alunos</p>
+          <p><strong>Empreendedora:</strong> Raquel Queiroz</p>
+          <p><strong>Empresa:</strong> Super Fit</p>
+          <p><strong>Data de envio:</strong> 10/05/2024</p>
+          <a href=""><button>Analisar e Classificar</button></a>
+        </div>
 
-    <section>
-      <h3>Grupos Aprovados</h3>
-      <section>
-        <h4>Grupo 3C</h4>
-        <p>Aprovado para desenvolvimento de app de receitas.</p>
-        <button>Ver Detalhes</button>
+        <div>
+          <h4>App de Gestão de Academia</h4>
+          <p><strong>Descrição:</strong> Aplicativo para controle de treinos e frequência de alunos</p>
+          <p><strong>Empreendedora:</strong> Raquel Queiroz</p>
+          <p><strong>Empresa:</strong> Super Fit</p>
+          <p><strong>Data de envio:</strong> 10/05/2024</p>
+          <a href=""><button>Analisar e Classificar</button></a>
+        </div>
       </section>
-      <section>
-        <h4>Grupo 5A</h4>
-        <p>Aprovado para criação de plataforma de estudos.</p>
-        <button>Ver Detalhes</button>
-      </section>
-      <!-- Navegação de grupos -->
-      <div>
-        <button>&larr;</button>
-        <button>&rarr;</button>
-      </div>
-    </section>
-  </main>
+    </main>
+
+    <!-- Barra Lateral -->
+    <aside>
+      <h3>Minhas Informações</h3>
+      <p><strong>Nome:</strong> Professora Bruna</p>
+      <p><strong>Email:</strong> bruna@gmail.com</p>
+      <p><strong>Departamento:</strong> Coordenação de DSM</p>
+
+      <h3>Estatísticas Gerais</h3>
+      <a href=""><button>Demandas Pendentes: 3</button></a><br>
+      <a href=""><button>Em Andamento: 7</button></a><br>
+      <a href=""><button>Concluídos: 9</button></a>
+
+      <h3>Relatórios</h3>
+      <a href=""><button>Relatório Mensal</button></a><br>
+      <a href=""><button>Relatório Semestral</button></a>
+    </aside>
+  </div>
+
+  <!-- Rodapé -->
+  <footer>
+    <nav>
+     
+    </nav>
+    
+  </footer>
+
 </body>
 </html>
